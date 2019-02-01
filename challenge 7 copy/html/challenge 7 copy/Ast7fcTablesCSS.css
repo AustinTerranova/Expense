@@ -1,0 +1,52 @@
+
+div {
+	text-align: center;
+	border-style: solid;
+	font-family: 'Permanent Marker', cursive;
+	
+	
+}
+
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 1.5em;
+}
+table{
+
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 80%;
+	font-family: ariel, helvetica, sans-serif
+}
+th {
+
+	background-color: red;
+	border: solid;
+	border-color: black;
+	color: blue;
+
+
+}
+td {
+	text-align: center;
+	border: solid;
+}
+.image{
+	width: 120px;
+}
+.title{
+	height: 10vh;
+}
+.data {
+	text-decoration-color: blue;
+	text-align: center;
+	table-layout: fixed;
+}
+.showtime{
+	color:crimson;
+}
+.rating{
+	color:crimson;
+}

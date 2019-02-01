@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stepper View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StepperViewController" customModule="ProgressStepper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Iaw-gq-HWd">
+                                <rect key="frame" x="140" y="329" width="94" height="29"/>
+                                <connections>
+                                    <action selector="updateProgress:" destination="BYZ-38-t0r" eventType="valueChanged" id="3pd-vK-EVC"/>
+                                </connections>
+                            </stepper>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JgQ-FV-H2E">
+                                <rect key="frame" x="0.0" y="366" width="359" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Iaw-gq-HWd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2hD-wl-s8W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JgQ-FV-H2E" secondAttribute="trailing" constant="16" id="752-EM-ukw"/>
+                            <constraint firstItem="JgQ-FV-H2E" firstAttribute="top" secondItem="Iaw-gq-HWd" secondAttribute="bottom" constant="8" id="GcD-KW-l2s"/>
+                            <constraint firstItem="Iaw-gq-HWd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iGa-Q7-VeE"/>
+                            <constraint firstItem="JgQ-FV-H2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vmV-CH-vUq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progress" destination="Iaw-gq-HWd" id="Yrj-g2-ewC"/>
+                        <outlet property="stepper" destination="JgQ-FV-H2E" id="gMj-gJ-BDy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

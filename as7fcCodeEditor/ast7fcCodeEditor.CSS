@@ -1,0 +1,39 @@
+div {
+	text-align: center;
+	margin: auto;
+	width: 500px;
+
+}
+
+#html {
+	width: 500px;
+	float: left;
+	height: 200px;
+	border: 2px solid blue;
+	border border-radius: 15px;
+	margin: 10px;
+}
+#css {
+	width: 500px;
+	float: left;
+	height: 200px;
+	border: 2px solid blue;
+	border border-radius: 15px;
+	margin: 10px;
+}
+#preview {
+	width: 500px;
+	float: left;
+	height: 400px;
+	border: 2px solid blue;
+	border border-radius: 15px;
+	margin: 10px;
+}
+h1 {
+	text-align: center;
+	margin: auto; 
+}
+h2 {
+	text-align: center; 
+	margin: auto;
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Expense View Controller-->
+        <scene sceneID="fNY-Ev-0uW">
+            <objects>
+                <viewController id="pSj-W6-3zF" customClass="ExpenseViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5j4-VN-yF0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tif-fJ-FTB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="hhM-YL-iMM" customClass="ExpenseTableViewCell" customModule="Expenses" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hhM-YL-iMM" id="U4k-Sv-u2a" customClass="ExpenseTableViewCell" customModule="Expenses" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pSj-W6-3zF" id="uoZ-pX-D0H"/>
+                                    <outlet property="delegate" destination="pSj-W6-3zF" id="BhH-Ti-Obm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pqZ-y9-Blp" firstAttribute="bottom" secondItem="tif-fJ-FTB" secondAttribute="bottom" id="CWe-fi-ksJ"/>
+                            <constraint firstItem="tif-fJ-FTB" firstAttribute="top" secondItem="pqZ-y9-Blp" secondAttribute="top" id="MnP-wl-KT2"/>
+                            <constraint firstItem="tif-fJ-FTB" firstAttribute="leading" secondItem="pqZ-y9-Blp" secondAttribute="leading" id="VfS-Nc-6A9"/>
+                            <constraint firstItem="pqZ-y9-Blp" firstAttribute="trailing" secondItem="tif-fJ-FTB" secondAttribute="trailing" id="bmg-tl-ucd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pqZ-y9-Blp"/>
+                    </view>
+                    <connections>
+                        <outlet property="cell" destination="hhM-YL-iMM" id="Ja7-Pa-c1Z"/>
+                        <outlet property="expenseTableView" destination="tif-fJ-FTB" id="xMZ-HW-kTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WA4-9Q-8ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162.40000000000001" y="68.815592203898049"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- name: Austin Terranova
+     pawprint: ast7fc
+     date: 11/1/2018
+-->
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title> Challenge 9</title>
+       
+    
+    </head>
+    <body>
+       <div id="preview"></div>
+        <button type="button" onclick="loadHome()">Home</button>
+        
+        <button type="button" onclick="loadPokeLevel()">XML PokeLevel</button>
+       
+        <button type="button" onclick="loadPokeEvo()">XML PokeEvo</button>
+        <button type="button" onclick="loadPokeType()">JSON PokeType</button>
+        <button type="button" onclick="loadPokeGrowth()">JSON PokeGrowth</button>
+        <script>
+            function loadHome() {
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("preview").innerHTML =
+                        this.responseText;
+                    }
+                };
+                xhttp.open("GET", "https://www.professorwergeles.com/webService.php?content=home",    true);
+                document.getElementById("preview").innerHTML = "loading..."
+                xhttp.send();
+            }
+            
+           function loadPokeLevel() {
+             
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        parser = new DOMParser();
+                        xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+                        var i;
+                         var pokeList = xmlDoc.getElementsByTagName("nm");
+                         var pokelvl = xmlDoc.getElementsByTagName("lvl");
+                        var pokeInfo = "";
+                        for (i=0;i<pokeList.length;i++){
+            
+                            pokeInfo += "<li>" + pokeList[i].childNodes[0].nodeValue + " evolves into " + pokelvl[i].childNodes[0].nodeValue + "</li>";
+                            
+                        }
+
+                        document.getElementById("preview").innerHTML =
+                            pokeInfo;
+                            //xmlDoc.getElementsByTagName("lvl")[1].childNodes[0].nodeValue ;
+                        
+                    }
+                };
+                xhttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=xml",    true);
+                document.getElementById("preview").innerHTML = "loading..."
+                xhttp.send();
+            }
+            
+             function loadPokeEvo() {
+             
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        parser = new DOMParser();
+                        xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+                        var i;
+                         var pokeList = xmlDoc.getElementsByTagName("nm");
+                         var pokeEvo = xmlDoc.getElementsByTagName("evo");
+                        var pokeInfo = "";
+                        for (i=0;i<pokeList.length;i++){
+            
+                            pokeInfo += "<li>" + pokeList[i].childNodes[0].nodeValue + " evolves into " + pokeEvo[i].childNodes[0].nodeValue + "</li>";
+                            
+                        }
+
+                        document.getElementById("preview").innerHTML =
+                            pokeInfo;
+                            //xmlDoc.getElementsByTagName("lvl")[1].childNodes[0].nodeValue ;
+                        
+                    }
+                };
+                xhttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=xml",    true);
+                document.getElementById("preview").innerHTML = "loading..."
+                xhttp.send();
+            }
+            
+            function loadPokeType() {
+             
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        var i = 0;
+                        document.getElementById("preview").innerHTML = ""
+                        for (; i<myObj.poke.length; i++){
+                           
+                            document.getElementById("preview").innerHTML += "<li>" + myObj.poke[i].nm + " is of type " + myObj.poke[i].typ + "</li>" ;
+                            
+                        }
+                       //var myObj = JSON.parse(this.responseText);
+                       //document.getElementById("preview").innerHTML = myObj.poke[0].nm;
+                    }
+                };
+                xhttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=json",    true);
+                document.getElementById("preview").innerHTML = "loading..."
+                xhttp.send();
+            }
+            
+             function loadPokeGrowth() {
+             
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        var i = 0;
+                        document.getElementById("preview").innerHTML = ""
+                        for (; i<myObj.poke.length; i++){
+                           
+                            document.getElementById("preview").innerHTML += "<li>" + myObj.poke[i].nm + " has a growth rate of " + myObj.poke[i].gr + "</li>" ;
+                            
+                        }
+                       //var myObj = JSON.parse(this.responseText);
+                       //document.getElementById("preview").innerHTML = myObj.poke[0].nm;
+                    }
+                };
+                xhttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=json",    true);
+                document.getElementById("preview").innerHTML = "loading..."
+                xhttp.send();
+            }
+        </script>
+        
+    </body>
+
+
+
+</html>
